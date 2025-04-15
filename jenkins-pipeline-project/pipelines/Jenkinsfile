@@ -12,14 +12,14 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Running tests...'
-                sh 'pytest jenkins-pipeline-project/tests/test_app.py'
+                bat 'pytest jenkins-pipeline-project/tests/test_app.py'
             }
         }
 
         stage('Deploy') {
             steps {
                 echo 'Deploying the application...'
-                sh 'jenkins-pipeline-project/pipelines/scripts/deploy.sh'
+                bat 'jenkins-pipeline-project/pipelines/scripts/deploy.sh'
             }
         }
     }
